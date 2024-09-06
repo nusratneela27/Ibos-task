@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "title": "Ergonomic Office Chair",
+      "price": 149.99,
+      "sale": "20%",
+      "description": "This ergonomic chair provides excellent lumbar support and adjustable features for a comfortable seating experience.",
+      "image": "src/assets/chair1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Modern Lounge Chair",
+      "price": 299.99,
+      "sale": "15%",
+      "description": "A sleek modern design, this lounge chair is perfect for adding style and comfort to any room.",
+      "image": "src/assets/chair2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Leather Executive Chair",
+      "price": 399.99,
+      "sale": "25%",
+      "description": "Crafted from genuine leather, this executive chair combines luxury with function.",
+      "image": "src/assets/chair3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Dining Chair Set",
+      "price": 199.99,
+      "sale": "10%",
+      "description": "Set of four stylish dining chairs, perfect for modern and classic dining rooms alike.",
+      "image": "src/assets/chair4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Reclining Armchair",
+      "price": 249.99,
+      "sale": "30%",
+      "description": "A reclining armchair with plush cushioning for ultimate relaxation.",
+      "image": "src/assets/chair5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Outdoor Patio Chair",
+      "price": 89.99,
+      "sale": "20%",
+      "description": "Durable and weather-resistant, this patio chair is ideal for outdoor seating.",
+      "image": "src/assets/chair6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Swivel Bar Stool",
+      "price": 79.99,
+      "sale": "15%",
+      "description": "A sturdy swivel bar stool with adjustable height and comfortable seating.",
+      "image": "src/assets/chair7.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Wooden Rocking Chair",
+      "price": 129.99,
+      "sale": "10%",
+      "description": "A classic wooden rocking chair perfect for nurseries and living rooms.",
+      "image": "src/assets/chair8.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Accent Chair",
+      "price": 189.99,
+      "sale": "35%",
+      "description": "Add a pop of color to your space with this stylish accent chair.",
+      "image": "src/assets/chair9.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Mesh Back Task Chair",
+      "price": 99.99,
+      "sale": "25%",
+      "description": "A lightweight task chair with a breathable mesh back for all-day comfort.",
+      "image": "src/assets/chair10.jpg"
+    }
+  ]
+  

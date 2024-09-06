@@ -1,18 +1,46 @@
-import React from "react";
+import React, { useContext } from "react";
 import login from "../assets/chris-lee-70l1tDAI6rM-unsplash 1.png";
 import icon from "../assets/icon.png";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
+  const { register, handleSubmit, reset } = useForm();
+  const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
+  const onSubmit = (data) => {
+    // console.log(data);
+    createUser(data.email, data.password)
+      .then((result) => {
+        const createUser = result.user;
+        console.log(createUser);
+        reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error.message);
+        toast.error("User already in use");
+      });
+  };
+
   return (
     <div className="min-h-screen flex justify-center items-center">
       <div className="flex flex-col lg:flex-row justify-between items-center w-full">
         {/* Form Section */}
         <div className="w-3/4 lg:w-1/2 lg:px-40">
           <div className="card  bg-base-200">
-            <form className="card-body space-y-3">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="card-body space-y-3"
+            >
               <div className="text-center space-y-1">
                 <h1 className="text-2xl font-bold">Welcome To</h1>
                 <h1 className="text-4xl font-bold">
@@ -28,6 +56,7 @@ const SignUp = () => {
                     placeholder="First name (optional)"
                     className="input input-bordered w-full"
                     required
+                    {...register("firstName")}
                   />
                 </div>
                 <div className="form-control flex-1">
@@ -36,6 +65,7 @@ const SignUp = () => {
                     placeholder="Last name (optional)"
                     className="input input-bordered w-full"
                     required
+                    {...register("lastName")}
                   />
                 </div>
               </div>
@@ -46,6 +76,7 @@ const SignUp = () => {
                   placeholder="Enter your email"
                   className="input input-bordered"
                   required
+                  {...register("email")}
                 />
               </div>
 
@@ -55,6 +86,7 @@ const SignUp = () => {
                   placeholder="Enter your password"
                   className="input input-bordered"
                   required
+                  {...register("password")}
                 />
               </div>
               <div className="flex items-center gap-2 font-semibold">
@@ -69,7 +101,9 @@ const SignUp = () => {
                 </p>
               </div>
               <div className="form-control">
-                <button className="btn bg-black text-white">Sign Up</button>
+                <button type="submit" className="btn bg-black text-white">
+                  Sign Up
+                </button>
               </div>
 
               <div className="flex items-center">
@@ -112,11 +146,17 @@ const SignUp = () => {
           />
           {/* Text Overlay */}
           <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white space-y-2">
-            <img src={icon} alt="" />
+            <Link to={"/"}>
+              <img src={icon} alt="" />
+            </Link>
             <h1 className="text-5xl font-bold text-white">
               Furni<span className="text-sky-400">Flex</span>
             </h1>
-            <p className="w-2/3">Discover a seamless shopping experience with our curated collection of products. From fashion to electronics, we bring quality.</p>
+            <p className="w-2/3">
+              Discover a seamless shopping experience with our curated
+              collection of products. From fashion to electronics, we bring
+              quality.
+            </p>
           </div>
         </div>
       </div>

@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "./Container";
 import logo from "../../assets/Logo.png";
+import avatar from "../../assets/avatar.png";
 import { IoBagOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
   const navOptions = (
     <>
       <NavLink to={"/"}>
@@ -53,10 +63,21 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end gap-10">
-          <IoBagOutline />
-          <NavLink to={"login"}>
-            <button className="btn btn-neutral">Login</button>
-          </NavLink>
+          {user ? (
+            <>
+              <IoBagOutline size={25}/>
+              <img src={avatar} alt="" />
+              <button onClick={handleLogout} className="btn btn-neutral">
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <NavLink to={"login"}>
+                <button className="btn btn-neutral">Login</button>
+              </NavLink>
+            </>
+          )}
         </div>
       </div>
     </Container>
