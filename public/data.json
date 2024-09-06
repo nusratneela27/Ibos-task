@@ -2,8 +2,8 @@
   {
     "id": 1,
     "title": "Recliner Chair Wood",
-    "price": "149.99",
-    "previousPrice": "187.49",
+    "price": 149.99,
+    "previousPrice": 187.49,
     "sale": "20% OFF",
     "description": "It has a backrest that can be tilted back, and often a footrest extended",
     "image": "../src/assets/chair/image 146.png"
@@ -11,17 +11,17 @@
   {
     "id": 2,
     "title": "Timber Ride Padded",
-    "price": "299.99",
-    "previousPrice": "352.93",
+    "price": 299.99,
+    "previousPrice": 352.93,
     "sale": "15% OFF",
-    "description": "High Back Rocking Side Pocket Portable Folding Outdoor Camping Chairs ",
+    "description": "High Back Rocking Side Pocket Portable Folding Outdoor Camping Chairs",
     "image": "../src/assets/chair/image 147.png"
   },
   {
     "id": 3,
     "title": "Blank Bamboo Wicker",
-    "price": "399.99",
-    "previousPrice": "533.32",
+    "price": 399.99,
+    "previousPrice": 533.32,
     "sale": "25% OFF",
     "description": "Lightweight, easy to clean, sturdy, safe and stable. Non-slip legs",
     "image": "../src/assets/chair/image 149.png"
@@ -29,8 +29,8 @@
   {
     "id": 4,
     "title": "Isolated Wooden Rock",
-    "price": "199.99",
-    "previousPrice": "222.21",
+    "price": 199.99,
+    "previousPrice": 222.21,
     "sale": "10% OFF",
     "description": "It has a backrest that can be tilted back, and often a footrest extended",
     "image": "../src/assets/chair/image_125-removebg-preview 1.png"
@@ -38,8 +38,8 @@
   {
     "id": 5,
     "title": "Colored Wooden Chair",
-    "price": "249.99",
-    "previousPrice": "357.13",
+    "price": 249.99,
+    "previousPrice": 357.13,
     "sale": "30% OFF",
     "description": "It has a backrest that can be tilted back, and often a footrest extended",
     "image": "../src/assets/chair/rocking-chair-with-padded-seat 1.png"
@@ -47,8 +47,8 @@
   {
     "id": 6,
     "title": "Minimal Empty Rocking",
-    "price": "89.99",
-    "previousPrice": "112.49",
+    "price": 89.99,
+    "previousPrice": 112.49,
     "sale": "20% OFF",
     "description": "A seat, especially for one person, usually having four legs for support.",
     "image": "../src/assets/chair/image 148.png"
@@ -56,26 +56,26 @@
   {
     "id": 7,
     "title": "Swivel Bar Stool",
-    "price": "79.99",
-    "previousPrice": "94.11",
+    "price": 79.99,
+    "previousPrice": 94.11,
     "sale": "15% OFF",
     "description": "A sturdy swivel bar stool with adjustable height and comfortable seating.",
-    "image": "../src/assets/chair/image 146.png"
+    "image": "../src/assets/chair/image 149.png"
   },
   {
     "id": 8,
     "title": "Wooden Rocking Chair",
-    "price": "129.99",
-    "previousPrice": "144.43",
+    "price": 129.99,
+    "previousPrice": 144.43,
     "sale": "10% OFF",
     "description": "A classic wooden rocking chair perfect for nurseries and living rooms.",
-    "image": "../src/assets/chair/image 146.png"
+    "image": "../src/assets/chair/image 147.png"
   },
   {
     "id": 9,
     "title": "Accent Chair",
-    "price": "189.99",
-    "previousPrice": "292.29",
+    "price": 189.99,
+    "previousPrice": 292.29,
     "sale": "35% OFF",
     "description": "Add a pop of color to your space with this stylish accent chair.",
     "image": "../src/assets/chair/image 146.png"

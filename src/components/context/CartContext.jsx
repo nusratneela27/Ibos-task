@@ -21,6 +21,14 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  const incrementQuantity = (id) => {
+    setCart(cart.map(item => item.id === id ? { ...item, quantity: item.quantity + 1 } : item));
+  };
+
+  const decrementQuantity = (id) => {
+    setCart(cart.map(item => item.id === id ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item));
+  };
+
   const removeFromCart = (productId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   };
@@ -29,6 +37,8 @@ export const CartProvider = ({ children }) => {
     cart,
     addToCart,
     removeFromCart,
+    incrementQuantity,
+    decrementQuantity
   };
 
   return (

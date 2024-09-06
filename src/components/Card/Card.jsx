@@ -12,7 +12,7 @@ const Card = ({ id, title, price, sale, description,previousPrice, image }) => {
         alt={title}
         className="rounded-lg bg-slate-100 m-4"
       />
-      <div className="p-4">
+      <div className="p-4 space-y-2">
         <h2 className="text-lg font-bold">{title}</h2>
 
         <div className="flex justify-between">

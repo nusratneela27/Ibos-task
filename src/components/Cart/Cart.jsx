@@ -3,7 +3,10 @@ import { CartContext } from "../context/CartContext";
 import { RxCross2 } from "react-icons/rx";
 
 const Cart = () => {
-  const { cart, removeFromCart, clearCart } = useContext(CartContext);
+  const { cart, removeFromCart, incrementQuantity, decrementQuantity } =
+    useContext(CartContext);
+
+    const totalPrice = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
     <div className="flex w-full p-4 mb-16 gap-10">
@@ -18,9 +21,19 @@ const Cart = () => {
                 <div key={item.id} className="flex">
                   <div className="flex justify-center items-center gap-3">
                     <div className="flex gap-2 border px-4 py-1 rounded-lg">
-                      <p>-</p>
+                      <p
+                        className="cursor-pointer"
+                        onClick={() => decrementQuantity(item.id)}
+                      >
+                        -
+                      </p>
                       <p>{item.quantity}</p>
-                      <p>+</p>
+                      <p
+                        className="cursor-pointer"
+                        onClick={() => incrementQuantity(item.id)}
+                      >
+                        +
+                      </p>
                     </div>
 
                     <img
@@ -38,7 +51,9 @@ const Cart = () => {
                     onClick={() => removeFromCart(item.id)}
                   />
                 </div>
-                <p className="font-bold text-end pt-2">${item.price}</p>
+                <p className="font-bold text-end pt-2">
+                  ${item.price * item.quantity}
+                </p>
               </div>
             ))}
           </div>
@@ -47,7 +62,9 @@ const Cart = () => {
       <div className="w-1/4 ">
         <h1 className="text-2xl font-bold mb-4">Order details</h1>
         <div className="border bg-slate-50 rounded-lg p-5 space-y-3">
-          <p className="flex justify-between">Subtotal</p>
+          <p className="flex justify-between">
+            Subtotal <span>$ {totalPrice.toFixed(2)}</span>
+          </p>
           <p className="flex justify-between">
             Shipping <span>Free</span>
           </p>
@@ -56,10 +73,12 @@ const Cart = () => {
           </p>
           <hr />
           <h1 className="flex justify-between text-xl font-bold">
-            Total <span>$</span>
+            Total <span>$ {totalPrice.toFixed(2)}</span>
           </h1>
         </div>
-        <button className="w-full mt-8 btn bg-black text-white">GO TO CHECKOUT</button>
+        <button className="w-full mt-8 btn bg-black text-white">
+          GO TO CHECKOUT
+        </button>
       </div>
     </div>
   );
