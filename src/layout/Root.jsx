@@ -9,9 +9,7 @@ const Root = () => {
     <div>
       <Navbar></Navbar>
       <Container>
-        <div className="h-screen">
-          <Outlet></Outlet>
-        </div>
+        <Outlet></Outlet>
       </Container>
       <Footer></Footer>
     </div>
