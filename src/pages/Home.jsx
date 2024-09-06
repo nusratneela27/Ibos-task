@@ -1,32 +1,39 @@
-// src/pages/Home.jsx
-import React, { useEffect, useState } from 'react';
-import Card from '../components/Card/Card.jsx'; // Import the Card component
+import React, { useContext, useEffect, useState } from "react";
+import Card from "../components/Card/Card.jsx";
+import { ProductContext } from "../components/context/ProductContext.jsx";
 
 const Home = () => {
-  const [items, setItems] = useState([]);
+  const { products } = useContext(ProductContext);
 
-  // Fetch the data from JSON or API
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('/public/data.json'); // Update with actual path or API endpoint
-      const data = await response.json();
-      setItems(data);
-    };
-    
-    fetchData();
-  }, []);
+  // const [items, setItems] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await fetch("/public/data.json");
+  //     const data = await response.json();
+  //     setItems(data);
+  //   };
+
+  //   fetchData();
+  // }, []);
 
   return (
-    <div className="p-10">
-      <h1 className="text-3xl font-bold mb-6">Home</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {items.map((item) => (
+    <div className="flex flex-col md:flex-row justify-evenly w-full py-20">
+      <div className="flex flex-col space-y-4 w-56">
+        <button className="btn bg-black text-white">Rocking chair</button>
+        <button className="btn bg-black text-white">Side Chair</button>
+        <button className="btn bg-black text-white">Lounge Chair</button>
+      </div>
+      <div className="border-r"></div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {products.map((item) => (
           <Card
             key={item.id}
+            id={item.id}
             title={item.title}
             price={item.price}
-            previousPrice={item.previousPrice}
             sale={item.sale}
+            previousPrice={item.previousPrice}
             description={item.description}
             image={item.image}
           />

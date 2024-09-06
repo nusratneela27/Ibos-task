@@ -79,14 +79,5 @@
     "sale": "35% OFF",
     "description": "Add a pop of color to your space with this stylish accent chair.",
     "image": "../src/assets/chair/image 146.png"
-  },
-  {
-    "id": 10,
-    "title": "Mesh Back Task Chair",
-    "price": "99.99",
-    "previousPrice": "133.32",
-    "sale": "25% OFF",
-    "description": "A lightweight task chair with a breathable mesh back for all-day comfort.",
-    "image": "../src/assets/chair/image 146.png"
   }
 ]

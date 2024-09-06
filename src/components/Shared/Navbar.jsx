@@ -5,9 +5,11 @@ import avatar from "../../assets/avatar.png";
 import { IoBagOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { CartContext } from "../context/CartContext";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const { cart } = useContext(CartContext);
 
   const handleLogout = () => {
     logOut()
@@ -15,12 +17,16 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
 
+  const totalCartItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+
   const navOptions = (
     <>
       <NavLink to={"/"}>
         <li>Home</li>
       </NavLink>
-      <li>Products</li>
+      <NavLink to={"order"}>
+        <li>Products</li>
+      </NavLink>
       <li>Categories</li>
       <li>Custom</li>
       <li>Blog</li>
@@ -70,7 +76,15 @@ const Navbar = () => {
           <div className="navbar-end gap-10">
             {user ? (
               <>
-                <IoBagOutline size={25} />
+                <div className="relative">
+                  <IoBagOutline size={30} />
+                  {totalCartItems > 0 && (
+                    <span className="absolute top-5 -right-2 inline-flex items-center justify-center text-white bg-black px-2 py-1 text-xs font-bold leading-none  rounded-full">
+                      {totalCartItems}
+                    </span>
+                  )}
+                </div>
+
                 <img src={avatar} alt="" />
                 <button onClick={handleLogout} className="btn btn-neutral">
                   Logout
