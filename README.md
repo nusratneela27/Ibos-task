@@ -1,5 +1,5 @@
 ## live link
-[FurniFlex]()
+[FurniFlex](https://furnitureflex.netlify.app/)
 
 # React + Vite
 
