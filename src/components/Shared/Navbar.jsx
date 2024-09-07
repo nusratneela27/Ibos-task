@@ -72,7 +72,7 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <div className="navbar-end gap-10">
+          <div className="navbar-end gap-4 lg:gap-10">
             {user ? (
               <>
                 <NavLink to={"order"}>
@@ -85,7 +85,7 @@ const Navbar = () => {
                     )}
                   </div>
                 </NavLink>
-                <div className="tooltip" data-tip={user?.email}>
+                <div className="tooltip hidden lg:block" data-tip={user?.email}>
                   <img src={avatar} alt="" />
                 </div>
 
